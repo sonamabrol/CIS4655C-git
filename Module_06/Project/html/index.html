@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Module_06</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+	<script>
+	function notifyMe() {
+	if(window.Notification && Notification.permission !== "denied") {
+	Notification.requestPermission(function(status) {  // status is "granted", if accepted by user
+	   console.log('status is '+status);
+		var n = new Notification('Module6', { 
+			body: 'Module6 notification api.....!',
+			//icon: '/path/to/icon.png' ,// optional
+			
+		}); 
+		
+		setTimeout(n.close.bind(n), 10000);
+	});
+}
+}
+  
+	</script>
+</head>
+<body style="background-color:#fff">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <a class="navbar-brand" href="#"> <img src="../img/flowers.jpg" alt="module_02_image"
+                                                           class="img-responsive img-rounded"
+                                                           style="max-height: 40px; margin-top: -63%;"> </a>
+                    <div class="text-right">
+                        <span class="glyphicon glyphicon-comment"></span>
+                        <span class="glyphicon glyphicon-envelope"></span>
+                        <span class="glyphicon glyphicon-off"></span>
+                        <span class="glyphicon glyphicon-search"></span>
+                    </div>
+                </div>
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav">
+                            <li><a href="./index.html" class="bg-primary">Home</a></li>
+                            <li><a href="./aboutUs.html" class="bg-danger">About Us</a></li>
+                            <li><a href="./contact.html" class="bg-success">Contact</a></li>
+                            <li><a href="./faq.html" class="bg-info">FAQ</a></li>
+                        </ul>
+                    </div>
+                </nav>
+				
+				<div>
+	 			<button type="submit" id="show_button" onClick="notifyMe()" class="btn btn-primary">Show a Notification</button>	
+				</div>
+                <div class="panel-body">
+                  <form>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-12 col-md-12 control-label">
+                            FirstName</label>
+                        <div class="col-sm-12 col-md-12 ">
+                            <input type="text" class="form-control" id="inputfirstName3" placeholder="FirstName"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-12 col-md-12  control-label">
+                            LastName</label>
+                        <div class="col-sm-12 col-md-12 ">
+                            <input type="text" class="form-control" id="inputLastName3" placeholder="LastName"
+                                   required>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group col-sm-12 col-md-12 d-flex p-3 bg-secondary text-white" >
+                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                     <label class="form-check-label p-2 bg-info" for="exampleCheck1">Full Time Student</label>
+                     <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                     <label class="form-check-label p-2 bg-warning" for="exampleCheck2">Part Time Student</label>
+                     <input type="checkbox" class="form-check-input" id="exampleCheck3">
+                     <label class="form-check-label p-2 bg-primary" for="exampleCheck3">Online Student</label>
+                    </div>
+                    <div class="form-group col-sm-12 col-md-12" >
+                      <input type="radio" name="gender" value="foo"> Foo<br>
+                      <input type="radio" name="gender" value="bar"> Bar<br>
+                      <input type="radio" name="gender" value="other"> Other
+                    </div>
+                    <div class="form-group col-sm-12 col-md-12" >
+                      <select class="selectpicker">
+                      <optgroup label="Major">
+                        <option>Electrical</option>
+                        <option>Computer Science</option>
+                        <option>Chemistry</option>
+                      </optgroup>
+                      <optgroup label="Minor">
+                        <option>Physics</option>
+                        <option>Math</option>
+                        <option>Information Technology</option>
+                      </optgroup>
+                    </select>
+                    </div>
+                    <div class="form-group col-sm-12 col-md-12" >
+                    <label for="comment" >Comment:</label>
+                      <textarea class=" form-group form-control" rows="10" id="comment" required></textarea>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
